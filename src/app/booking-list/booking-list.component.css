@@ -1,0 +1,58 @@
+.booking-list{
+    margin: 5% auto;
+    width: 80%;
+    border: 1px solid black;
+}
+
+.booking-item{
+    margin: 5%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.passenger{
+    
+}
+
+.passenger-detail{
+    font-size: 25px;
+}
+
+.city-detail{
+    font-size: 20px;
+}
+
+.arrow{
+    display: flex;
+    align-items: center;
+}
+
+.locations {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section2, .section1, .section3{
+    width: 30%;
+}
+
+.section2, .section3{
+    text-align: center;
+}
+
+.section1{
+    padding-left: 40px;
+}
+
+h2{
+    text-align: center;
+}
+
+.buttons button{
+    margin-right: 10px;
+}
+

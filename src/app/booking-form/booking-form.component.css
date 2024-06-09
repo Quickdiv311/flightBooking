@@ -1,0 +1,36 @@
+.main-form{
+    margin: 5% auto;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mb-1{
+    font-weight: bolder;
+}
+
+form{
+    padding: 0 40px;
+}
+
+.submit-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.err-msg{
+    color: red;
+    font-weight: bolder;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+

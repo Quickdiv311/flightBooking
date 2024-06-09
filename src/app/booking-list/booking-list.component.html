@@ -1,0 +1,29 @@
+<div class="booking-list">
+    <h2>ALL BOOKINGS</h2>
+    <div class="booking-item" *ngFor="let booking of bookings">
+       <div class="section1">
+          <div class="passenger" *ngFor="let passenger of booking.passengerList; let i = index">
+             <b class="passenger-detail">{{i+1}}{{'.  '}}</b>
+             <b class="passenger-detail">{{passenger.name}}</b>
+             <b class="passenger-detail">({{passenger.age}})</b>
+        </div>
+       </div>
+       <div class="section2">
+        <div class="locations">
+            <b class="city-detail">{{booking.fromCity}}</b>
+            <span class="arrow"><b>{{'-->'}}</b></span>
+            <b class="city-detail">{{booking.toCity}}</b>
+        </div>
+        <div class="date">
+            <b>{{booking.journeyDate}}</b>
+        </div>
+       </div>
+       <div class="section3">
+          <div class="buttons">
+            <button class="btn btn-danger" (click)="deleteABooking(booking.id)">Delete</button>
+            <button class="btn btn-primary" [routerLink]="['/edit',booking.id]">Edit</button>
+            <button class="btn btn-success" [routerLink]="['/']">Go Back</button>
+          </div>
+       </div>
+    </div>
+</div>

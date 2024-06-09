@@ -1,0 +1,50 @@
+<div class="main-form">
+    <h2>PLEASE ENTER THE DETAILS OF THE PASSENGERS</h2>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+        <div class="row data">
+            <div class="col-md-4 mb-3">
+                <label class="mb-1">From City</label>
+                <input class="form-control" type="text" formControlName="fromCity">
+                <span class="err-msg" *ngIf="bookingForm.get('fromCity')?.invalid && bookingForm.get('fromCity')?.touched">Please enter a source</span>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="mb-1">To City</label>
+                <input class="form-control" type="text" formControlName="toCity">
+                <span class="err-msg" *ngIf="bookingForm.get('toCity')?.invalid && bookingForm.get('toCity')?.touched">Please enter a destination</span>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="mb-1">Journey Date</label>
+                <input class="form-control" type="date" formControlName="journeyDate">
+                <span class="err-msg" *ngIf="bookingForm.get('journeyDate')?.invalid && bookingForm.get('journeyDate')?.touched">Please enter a date</span>
+            </div>
+        </div>
+
+        <div class="form-array" formArrayName="passengerList">
+            <div *ngFor="let passenger of passengerControls; let i = index" [formGroupName]="i" class="row form-group mb-3">
+                <b>Passenger {{i+ 1}}</b>
+                <div class="col-md-6">
+                    <input class="form-control" type="text" placeholder="Passenger Name" formControlName="name">
+                </div>
+                <div class="col-md-1">
+                    <input class="form-control" type="number" placeholder="Age" formControlName="age">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-warning mx-2">
+                        Edit
+                    </button>
+                    <button class="btn btn-danger" (click)="removePassenger(i)">
+                        Remove
+                    </button>
+                </div>
+            </div>
+           <button class="btn btn-primary my-2" (click)="addPassenger();" type="button">Add Passenger</button>
+        </div>
+
+        <div class="submit-button">
+                <button class="btn btn-danger" [routerLink]="['/']">Go To Home</button>
+            <button class="btn btn-success" type="submit" [disabled]="bookingForm.invalid">{{id ? 'Save' :"Submit"}}</button>
+        </div>
+    </form>
+</div>
